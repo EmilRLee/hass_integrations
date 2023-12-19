@@ -1,0 +1,14 @@
+service: browser_mod.popup
+target:
+  device_id: <DEVICE ID>
+data:
+  dismissable: true
+  autoclose: true
+  title: Doorbell
+  size: fullscreen
+  timeout: 120000
+  content:
+    camera_view: live
+    type: picture-glance
+    entities: []
+    camera_image: <CAMERA ENTITY>
