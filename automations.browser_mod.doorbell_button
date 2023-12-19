@@ -1,14 +1,28 @@
-service: browser_mod.popup
-target:
-  device_id: <DEVICE ID>
-data:
-  dismissable: true
-  autoclose: true
-  title: Doorbell
-  size: fullscreen
-  timeout: 120000
-  content:
-    camera_view: live
-    type: picture-glance
-    entities: []
-    camera_image: <CAMERA ENTITY>
+alias: Doorbell live view
+description: Shows doorbell or front camera when the button is pressed
+trigger:
+  - platform: state
+    entity_id:
+      - <ENTITY ID> #DOORBELL ENTITY
+condition: []
+action:
+  - device_id: <DEVICE ID>
+    domain: mobile_app
+    type: notify
+    message: Someone at the front door
+    title: Front Doorbell
+  - service: browser_mod.popup
+    target:
+      device_id: <DEVICE ID>
+    data:
+      dismissable: true
+      autoclose: true
+      title: Front Doorbell
+      size: fullscreen
+      timeout: 120000
+      content:
+        camera_view: live
+        type: picture-glance
+        entities: []
+        camera_image: <CAMERA ENTITY>
+mode: single
