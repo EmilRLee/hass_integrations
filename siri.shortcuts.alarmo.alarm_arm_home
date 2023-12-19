@@ -1,3 +1,6 @@
+# create a shortcut on your Apple device that lets Siri know how to integrate with your home assistant for the given task. #
+############################################################################################################################
+
 entity_id: alarm_control_panel.alarmo
 code: <alarm panel code>
            |
